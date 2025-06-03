@@ -1,3 +1,3 @@
 # SegundoParcialPNC
 # Estudiante
-David Guevara, carnet: 00093217
+Luis David Guevara Rodríguez, carnet: 00093217
