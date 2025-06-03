@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "5235fa8a-5f0a-453c-9baa-2a6f15c825b3",
+		"name": "Books API Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5982776",
+		"_collection_link": "https://red-desert-483306.postman.co/workspace/My-Workspace~8504b75c-81a1-4f4d-84c0-be89f5a1f743/collection/5982776-5235fa8a-5f0a-453c-9baa-2a6f15c825b3?action=share&source=collection_link&creator=5982776"
+	},
+	"item": [
+		{
+			"name": "Crear libro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Cien años de soledad\",\n  \"author\": \"Gabriel García Márquez\",\n  \"isbn\": \"978-3-16-148410-0\",\n  \"publicationYear\": 1967,\n  \"language\": \"Español\",\n  \"pages\": 417,\n  \"genre\": \"Realismo mágico\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtrar libros por autor e idioma",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/books?author=Gabriel García Márquez&language=Español",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "Gabriel García Márquez"
+						},
+						{
+							"key": "language",
+							"value": "Español"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar libro por ISBN",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/books/978-3-16-148410-0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						"978-3-16-148410-0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar título e idioma",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/books/1?title=Nuevo Título&language=Inglés",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						"1"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Nuevo Título"
+						},
+						{
+							"key": "language",
+							"value": "Inglés"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar libro",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/books/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
